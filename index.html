@@ -31,19 +31,22 @@
             position: relative;
         }
         .bio-header {
-            margin-bottom: 0;
-        }
-        .bio-header h2 {
             margin: 0;
-            padding: 0 5px; /* Отступы от границ */
+            padding-bottom: 10px; /* Отступ между заголовком и полоской */
+            position: relative;
         }
         .line {
             position: absolute;
-            bottom: -10px; /* Полоска находится прямо у нижней границы */
+            bottom: -5px; /* Полоска будет немного ниже заголовка */
             left: 0;
             width: 100%;
             height: 2px;
             background-color: white;
+        }
+        .bio-header h2 {
+            margin: 0;
+            padding: 0;
+            z-index: 1; /* Заголовок будет сверху полоски */
         }
         .bio-text {
             margin-top: 15px;
@@ -69,8 +72,8 @@
     <div class="bio-box">
         <div class="bio-header">
             <h2>Обо мне:</h2>
+            <div class="line"></div> <!-- Полоска под заголовком -->
         </div>
-        <div class="line"></div>  <!-- Полоска снизу -->
         <p class="bio-text">Привет.. я...</p>
     </div>
     <div class="buttons-container">
