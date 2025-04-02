@@ -29,24 +29,25 @@
             display: inline-block;
             margin-top: 50px;
             position: relative;
+            background-color: black; /* Тёмный фон для блока */
         }
         .bio-header {
             margin: 0;
             padding-bottom: 10px; /* Отступ между заголовком и полоской */
-            position: relative;
-        }
-        .line {
-            position: absolute;
-            bottom: -5px; /* Полоска будет немного ниже заголовка */
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: white;
         }
         .bio-header h2 {
             margin: 0;
             padding: 0;
-            z-index: 1; /* Заголовок будет сверху полоски */
+        }
+        /* Полоска как часть квадрата */
+        .bio-box::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: white; /* Цвет полоски */
         }
         .bio-text {
             margin-top: 15px;
@@ -72,7 +73,6 @@
     <div class="bio-box">
         <div class="bio-header">
             <h2>Обо мне:</h2>
-            <div class="line"></div> <!-- Полоска под заголовком -->
         </div>
         <p class="bio-text">Привет.. я...</p>
     </div>
@@ -109,4 +109,4 @@
         }
     </script>
 </body>
-</html>
+    </html>
