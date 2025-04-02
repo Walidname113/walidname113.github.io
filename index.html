@@ -32,20 +32,27 @@
         }
         .bio-header {
             position: relative;
-            margin-bottom: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
         }
-        .line {
+        .bio-header::before,
+        .bio-header::after {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            border-top: 2px solid white;
+            height: 2px;
+            background-color: white;
+        }
+        .bio-header::after {
+            top: auto;
+            bottom: 0;
         }
         .bio-header h2 {
-            position: relative;
-            z-index: 1; /* Заголовок поверх полоски */
             margin: 0;
-            padding: 0 5px; /* Отступ от полоски */
+            padding: 0 5px; /* Отступы от полоски */
+            z-index: 1; /* Чтобы текст был поверх полосок */
         }
         .bio-text {
             margin-top: 15px;
@@ -70,10 +77,8 @@
     <button class="theme-toggle" onclick="toggleTheme()">☀️</button>
     <div class="bio-box">
         <div class="bio-header">
-            <div class="line"></div>  <!-- Полоска сверху -->
             <h2>Обо мне:</h2>
         </div>
-        <div class="line" style="top: auto; bottom: 0;"></div> <!-- Полоска снизу -->
         <p class="bio-text">Привет.. я...</p>
     </div>
     <div class="buttons-container">
