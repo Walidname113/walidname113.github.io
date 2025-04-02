@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Био</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            transition: background 0.3s, color 0.3s;
+        }
+        .theme-toggle {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+        }
+        .bio-box {
+            border: 2px solid white;
+            border-radius: 15px;
+            padding: 20px;
+            display: inline-block;
+            margin-top: 50px;
+            position: relative;
+        }
+        .line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            border-top: 2px solid white; /* Толщина и цвет полосы */
+            margin-top: 10px;
+        }
+        .title {
+            position: relative;
+            z-index: 1; /* Чтобы текст был поверх полосы */
+        }
+        .buttons-container {
+            margin-top: 20px; 
+            text-align: center;
+        }
+        .bio-button {
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 8px 15px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">☀️</button>
+    <div class="bio-box">
+        <div class="line"></div>  <!-- Полоска -->
+        <h2 class="title">Обо мне:</h2>
+        <p class="bio-text">Привет.. я...</p>
+    </div>
+    <div class="buttons-container">
+        <button class="bio-button" onclick="location.href='#'">Кнопка 1</button>
+        <button class="bio-button" onclick="location.href='#'">Кнопка 2</button>
+    </div>
+    <script>
+        function toggleTheme() {
+            let body = document.body;
+            let button = document.querySelector('.theme-toggle');
+            let bioBox = document.querySelector('.bio-box');
+            let buttons = document.querySelectorAll('.bio-button');
+
+            if (body.style.backgroundColor === 'black') {
+                body.style.backgroundColor = 'white';
+                body.style.color = 'black';
+                bioBox.style.borderColor = 'black';
+                button.innerHTML = '🌙';
+                buttons.forEach(btn => {
+                    btn.style.backgroundColor = 'black';
+                    btn.style.color = 'white';
+                });
+            } else {
+                body.style.backgroundColor = 'black';
+                body.style.color = 'white';
+                bioBox.style.borderColor = 'white';
+                button.innerHTML = '☀️';
+                buttons.forEach(btn => {
+                    btn.style.backgroundColor = 'white';
+                    btn.style.color = 'black';
+                });
+            }
+        }
+    </script>
+</body>
+</html>
