@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,7 +30,8 @@
             margin-top: 50px;
         }
         .buttons-container {
-            margin-top: 10px;
+            margin-top: 20px; /* Увеличено расстояние, чтобы кнопки были ниже */
+            text-align: center; /* Центрирование кнопок */
         }
         .bio-button {
             background-color: white;
@@ -48,38 +50,38 @@
     <div class="bio-box">
         <h2>Обо мне:</h2>
         <p class="bio-text">Здесь будет ваш текст...</p>
-        <div class="buttons-container">
-            <button class="bio-button" onclick="location.href='#'">Кнопка 1</button>
-            <button class="bio-button" onclick="location.href='#'">Кнопка 2</button>
-        </div>
-    </div><script>
-    function toggleTheme() {
-        let body = document.body;
-        let button = document.querySelector('.theme-toggle');
-        let bioBox = document.querySelector('.bio-box');
-        let buttons = document.querySelectorAll('.bio-button');
+    </div>
+    <div class="buttons-container">
+        <button class="bio-button" onclick="location.href='#'">Кнопка 1</button>
+        <button class="bio-button" onclick="location.href='#'">Кнопка 2</button>
+    </div>
+    <script>
+        function toggleTheme() {
+            let body = document.body;
+            let button = document.querySelector('.theme-toggle');
+            let bioBox = document.querySelector('.bio-box');
+            let buttons = document.querySelectorAll('.bio-button');
 
-        if (body.style.backgroundColor === 'black') {
-            body.style.backgroundColor = 'white';
-            body.style.color = 'black';
-            bioBox.style.borderColor = 'black';
-            button.innerHTML = '🌙';
-            buttons.forEach(btn => {
-                btn.style.backgroundColor = 'black';
-                btn.style.color = 'white';
-            });
-        } else {
-            body.style.backgroundColor = 'black';
-            body.style.color = 'white';
-            bioBox.style.borderColor = 'white';
-            button.innerHTML = '☀️';
-            buttons.forEach(btn => {
-                btn.style.backgroundColor = 'white';
-                btn.style.color = 'black';
-            });
+            if (body.style.backgroundColor === 'black') {
+                body.style.backgroundColor = 'white';
+                body.style.color = 'black';
+                bioBox.style.borderColor = 'black';
+                button.innerHTML = '🌙';
+                buttons.forEach(btn => {
+                    btn.style.backgroundColor = 'black';
+                    btn.style.color = 'white';
+                });
+            } else {
+                body.style.backgroundColor = 'black';
+                body.style.color = 'white';
+                bioBox.style.borderColor = 'white';
+                button.innerHTML = '☀️';
+                buttons.forEach(btn => {
+                    btn.style.backgroundColor = 'white';
+                    btn.style.color = 'black';
+                });
+            }
         }
-    }
-</script>
-
+    </script>
 </body>
 </html>
