@@ -31,16 +31,15 @@
             position: relative;
         }
         .line {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            border-top: 2px solid white; /* Толщина и цвет полосы */
+            border-top: 2px solid white; /* Горизонтальная линия */
             margin-top: 10px;
+            margin-bottom: 10px;
         }
-        .title {
+        .title-wrapper {
             position: relative;
-            z-index: 1; /* Чтобы текст был поверх полосы */
+            display: inline-block;
+            margin-top: 10px;
+            margin-bottom: 10px;
         }
         .buttons-container {
             margin-top: 20px; 
@@ -61,8 +60,11 @@
 <body>
     <button class="theme-toggle" onclick="toggleTheme()">☀️</button>
     <div class="bio-box">
-        <div class="line"></div>  <!-- Полоска -->
-        <h2 class="title">Обо мне:</h2>
+        <div class="line"></div>  <!-- Верхняя полоска -->
+        <div class="title-wrapper">
+            <h2>Обо мне:</h2>
+        </div>
+        <div class="line"></div>  <!-- Нижняя полоска -->
         <p class="bio-text">Привет.. я...</p>
     </div>
     <div class="buttons-container">
